@@ -1,8 +1,14 @@
-import Card from "./Components/Card";
+import Card, { CardBody } from "./Components/Card";
+import List from "./Components/List";
 
 function App() {
+  const nombres = ["Luis", "Marcos", "Alberto"]
 
-  return <Card></Card>
+  return <Card>
+    <CardBody title="Hola Mundo" text="Este seria un componente">
+    </CardBody>
+    <List data={nombres}></List>
+  </Card>
 
 }
 
