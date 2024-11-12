@@ -1,8 +1,8 @@
-import Titulo from "./TituloPrueba";
+import Card from "./Components/Card";
 
 function App() {
 
-  return <Titulo></Titulo>
+  return <Card></Card>
 
 }
 
