@@ -6,7 +6,7 @@ type ListProps = {
 }
 
 function List({ data,onSelect }: ListProps) {
-    const [index, setIndex] = useState(1);
+    const [index, setIndex] = useState(-1);
     const handClick = (i: number,elemento:string) => {
         setIndex(i);
         onSelect?.(elemento);

@@ -4,18 +4,21 @@ import Buttons from "./Components/Buttons";
 import { useState } from "react";
 
 function App() {
-const [indexButton,setIndexButton]=useState(false);
-const handClickButton= ()=>(setIndexButton(!indexButton))
 
-  const nombres :string[] = []
+const [data, setData]=useState(["Luis","Enrique","Alberto"])
+const addMinion=()=>(setData([...data,'minion']))
+const deleteMinion=()=>(setData(data.slice(0,-1)))
 const handSelect= (elemento:string)=>{
   console.log("imprimiendo",elemento)
 }
   return <Card>
+        <Buttons onclickButton={addMinion}>Agregar</Buttons>
+        <Buttons onclickButton={deleteMinion}>Eliminar</Buttons>
     <CardBody title="Hola Mundo" text="Este seria un componente">
     </CardBody>
-{nombres.length !==0 ?  <List data={nombres} onSelect={handSelect}></List> : 'No hay un listado de nombres'}
-<Buttons indexButtonProps={indexButton} onclickButton={handClickButton}>Hola mundo</Buttons>
+
+<List data={data}  onSelect={handSelect}></List>
+
   </Card>
 
 }
