@@ -13,7 +13,7 @@ function List({ data,onSelect }: ListProps) {
     }
     return (
         <ul className="list-group">
-            {data.map((elemento, i) => (<li key={elemento} onClick={() => { handClick(i,elemento) }} 
+            {data.map((elemento, i) => (<li key={i+1} onClick={() => { handClick(i,elemento) }} 
             className={`list-group-item ${index == i ? "active" : "" }`}>{elemento}</li>)) //Recorro el data con .map y pongo la lista una por una
             }
         </ul>

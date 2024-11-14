@@ -6,11 +6,7 @@ interface Props {
 function Card(props: Props) {
     const { children } = props
     return (
-        <div className="card"
-            style={{
-                width: '350px',
-
-            }} >
+        <div className="card" >
             <div className="card-body">
                 {children}
             </div>
@@ -21,15 +17,18 @@ function Card(props: Props) {
 interface CardBodyProps {
     title: string
     text: string
+    contador:number
 }
 export function CardBody(props: CardBodyProps) {
-
+    console.log("Este es el contado: " + props.contador);
     return (
         //Esto se pone cuando el html no posee un div
         <>
+        <div className="row text-center">
             <h5 className="card-title">{props.title}</h5>
             <p className="card-text">{props.text}</p>
-
+            <p className="card-text">{props.contador}</p>
+            </div>
 
         </>
     );
